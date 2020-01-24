@@ -14,8 +14,12 @@ public class smokeTest {
 	}
 
 	@Test
-	public void smoleTest() {
-		long SECONDS = 60;
-		my.nextTime(SECONDS);
+	public void correctDate() {
+		long SECONDS = 120;
+		MyDate ACTUAL = new MyDate(2020, 1, 1, 0, 0, 0);
+		String EXPECTED = "2020/01/01 00:02:00";
+		
+		String result = my.nextTime(SECONDS, ACTUAL);
+		assertEquals(EXPECTED, result);
 	}
 }
